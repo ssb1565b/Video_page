@@ -1,10 +1,10 @@
 @font-face {
   font-family: "NewYork";
-  src: url("../../../../../Users/subin/Library/Fonts/NewYork PERSONAL USE.otf");
+  src: url("./font/NewYork PERSONAL USE.otf");
 }
 @font-face {
   font-family: "DTNightingale-Light";
-  src: url("../../../../../Users/subin/Library/Fonts/DTNightingale-Light.otf");
+  src: url("./font/DTNightingale-Light.otf");
 }
 * {
   margin: 0;
@@ -66,6 +66,15 @@ header #gnb li a {
   font: 16px/1 "DTNightingale-Light";
   color: #eee;
   letter-spacing: 1px;
+}
+header #gnb li a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  border-bottom: 1px solid #888;
 }
 header .sns {
   display: flex;
