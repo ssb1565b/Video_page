@@ -1,0 +1,220 @@
+// FONT
+@font-face {
+  font-family: "NewYork";
+  src: url("../../../../../Users/subin/Library/Fonts/NewYork\ PERSONAL\ USE.otf");
+}
+@font-face {
+  font-family: "DTNightingale-Light";
+  src: url("../../../../../Users/subin/Library/Fonts/DTNightingale-Light.otf");
+}
+// RESET
+@import "reset";
+
+// COLOR
+$font-color: #eee;
+$line-color: #999;
+
+// COMMON
+body {
+  background-color: black;
+}
+
+// HEADER
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid $line-color;
+  padding: 3vh 5vw;
+  z-index: 2;
+  backdrop-filter: blur(10px);
+  h1 a {
+    font: bold 36px/50px "NewYork";
+    color: $font-color;
+  }
+  #gnb {
+    display: flex;
+    li {
+      margin: 0px 30px;
+      a {
+        font: 16px/1 "DTNightingale-Light";
+        color: $font-color;
+        letter-spacing: 1px;
+      }
+    }
+  }
+  .sns {
+    display: flex;
+    li {
+      margin: 0px 15px;
+    }
+  }
+  #snb {
+    display: none;
+  }
+}
+
+// VIDEO
+
+figure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+  video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.4;
+    filter: contrast(2);
+    mix-blend-mode: multiply;
+    opacity: 0.4;
+    transition-delay: 5s;
+    // video 에서는object-fit: cover; 이게 background-size: cover와 같음
+
+    // &:nth-child(1) {
+    //   opacity: 0;
+    // }
+  }
+  .text {
+    position: absolute;
+    left: 6vw;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 3;
+    .title {
+      position: relative;
+      p {
+        font: lighter 9vw/1 "NewYork";
+        color: $font-color;
+      }
+      span {
+        position: absolute;
+        right: -70px;
+        margin-top: 10px;
+        font: lighter 2vw/1 "DTNightingale-Light";
+        color: $font-color;
+      }
+    }
+
+    ul {
+      display: flex;
+      margin-top: 120px;
+      li {
+        &:first-child {
+          margin-right: 30px;
+        }
+        i {
+          font-size: 20px;
+          color: $font-color;
+          margin-right: 10px;
+        }
+        strong {
+          font: 14px/1 "DTNightingale-Light";
+          color: rgb(218, 218, 218);
+          letter-spacing: 1px;
+        }
+      }
+    }
+  }
+}
+
+// FOOTER
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font: 12px/1 "arial";
+  color: rgb(218, 218, 218);
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 5vh 0;
+  z-index: 2;
+}
+
+// 반응형
+@media screen and (max-width: 1000px) {
+  // 986이하일떄
+  header {
+    #gnb {
+      display: none;
+    }
+    .sns {
+      display: none;
+    }
+    div#snb {
+      display: block;
+      .sub-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 102px;
+        backdrop-filter: blur(10px);
+        border: 1px solid $line-color;
+        background-color: #000000da;
+        opacity: 1;
+        text-align: center;
+        transition: 0.4s;
+        padding: 20px 0;
+
+        &.hide {
+          opacity: 0;
+        }
+        li {
+          padding: 15px 0;
+          font: 16px/1 "newYork";
+          a {
+            position: relative;
+          }
+          a::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            border-bottom: 1px solid #888;
+          }
+          &:last-child {
+            margin-top: 20px;
+            a {
+              margin: 0 30px;
+            }
+          }
+        }
+      }
+    }
+    .btn_menu {
+      display: block;
+    }
+  }
+
+  figure {
+    .text {
+      left: 50%;
+      top: 35%;
+      transform: translateX(-50%);
+      .title {
+        p {
+          font-size: 22vw;
+        }
+        span {
+          font-size: 4vw;
+          right: 0;
+          left: 0;
+          margin: auto;
+          text-align: center;
+        }
+      }
+      ul {
+        justify-content: center;
+      }
+    }
+  }
+}

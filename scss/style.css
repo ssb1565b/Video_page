@@ -1,0 +1,208 @@
+@font-face {
+  font-family: "NewYork";
+  src: url("../../../../../Users/subin/Library/Fonts/NewYork PERSONAL USE.otf");
+}
+@font-face {
+  font-family: "DTNightingale-Light";
+  src: url("../../../../../Users/subin/Library/Fonts/DTNightingale-Light.otf");
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: white;
+}
+
+body {
+  background-color: black;
+}
+
+header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #999;
+  padding: 3vh 5vw;
+  z-index: 2;
+  -webkit-backdrop-filter: blur(10px);
+          backdrop-filter: blur(10px);
+}
+header h1 a {
+  font: bold 36px/50px "NewYork";
+  color: #eee;
+}
+header #gnb {
+  display: flex;
+}
+header #gnb li {
+  margin: 0px 30px;
+}
+header #gnb li a {
+  font: 16px/1 "DTNightingale-Light";
+  color: #eee;
+  letter-spacing: 1px;
+}
+header .sns {
+  display: flex;
+}
+header .sns li {
+  margin: 0px 15px;
+}
+header #snb {
+  display: none;
+}
+
+figure {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: 1;
+}
+figure video {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  opacity: 0.4;
+  filter: contrast(2);
+  mix-blend-mode: multiply;
+  opacity: 0.4;
+  transition-delay: 5s;
+}
+figure .text {
+  position: absolute;
+  left: 6vw;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 3;
+}
+figure .text .title {
+  position: relative;
+}
+figure .text .title p {
+  font: lighter 9vw/1 "NewYork";
+  color: #eee;
+}
+figure .text .title span {
+  position: absolute;
+  right: -70px;
+  margin-top: 10px;
+  font: lighter 2vw/1 "DTNightingale-Light";
+  color: #eee;
+}
+figure .text ul {
+  display: flex;
+  margin-top: 120px;
+}
+figure .text ul li:first-child {
+  margin-right: 30px;
+}
+figure .text ul li i {
+  font-size: 20px;
+  color: #eee;
+  margin-right: 10px;
+}
+figure .text ul li strong {
+  font: 14px/1 "DTNightingale-Light";
+  color: rgb(218, 218, 218);
+  letter-spacing: 1px;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  font: 12px/1 "arial";
+  color: rgb(218, 218, 218);
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 5vh 0;
+  z-index: 2;
+}
+
+@media screen and (max-width: 1000px) {
+  header #gnb {
+    display: none;
+  }
+  header .sns {
+    display: none;
+  }
+  header div#snb {
+    display: block;
+  }
+  header div#snb .sub-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 102px;
+    -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+    border: 1px solid #999;
+    background-color: rgba(0, 0, 0, 0.8549019608);
+    opacity: 1;
+    text-align: center;
+    transition: 0.4s;
+    padding: 20px 0;
+  }
+  header div#snb .sub-menu.hide {
+    opacity: 0;
+  }
+  header div#snb .sub-menu li {
+    padding: 15px 0;
+    font: 16px/1 "newYork";
+  }
+  header div#snb .sub-menu li a {
+    position: relative;
+  }
+  header div#snb .sub-menu li a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    border-bottom: 1px solid #888;
+  }
+  header div#snb .sub-menu li:last-child {
+    margin-top: 20px;
+  }
+  header div#snb .sub-menu li:last-child a {
+    margin: 0 30px;
+  }
+  header .btn_menu {
+    display: block;
+  }
+  figure .text {
+    left: 50%;
+    top: 35%;
+    transform: translateX(-50%);
+  }
+  figure .text .title p {
+    font-size: 22vw;
+  }
+  figure .text .title span {
+    font-size: 4vw;
+    right: 0;
+    left: 0;
+    margin: auto;
+    text-align: center;
+  }
+  figure .text ul {
+    justify-content: center;
+  }
+}/*# sourceMappingURL=style.css.map */
