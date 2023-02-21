@@ -15,10 +15,21 @@ $font-color: #eee;
 $line-color: #999;
 
 // COMMON
+html {
+  cursor: none;
+}
 body {
   background-color: black;
 }
-
+#circle {
+  background-color: transparent;
+  border: 1px solid white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 4;
+}
 // HEADER
 header {
   position: relative;
